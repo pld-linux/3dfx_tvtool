@@ -1,12 +1,12 @@
 [Desktop Entry]
 Name=3dfx TvTool
 Comment=3dfx Voodoo3 TV-out control utility
-Comment[pl]=NarzÄ™dzie do kontroli wyjÅ›cia TV w kartach 3dfx Voodoo3
+Comment[pl]=Narzêdzie do kontroli wyj¶cia TV w kartach 3dfx Voodoo3
 Exec=3dfx_tvtool
 Icon=3dfx_tvtool.xpm
 Terminal=false
 MultipleArgs=false
 Type=Application
 Encoding=UTF-8
-Categories:GTK;Video;
+Categories:Settings;HardwareSettings;
 # vi: encoding=utf-8
