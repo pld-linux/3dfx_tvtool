@@ -31,7 +31,7 @@ modu³u bt869 z lm_sensors.
 %setup -q
 
 %build
-CC=%{__cc}
+CC="%{__cc}"
 export CC
 %{__make}
 
@@ -39,8 +39,9 @@ export CC
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_desktopdir}
 
-%{__make} DESTDIR=$RPM_BUILD_ROOT \
-	BINDIR=%{_bindir} install
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	BINDIR=%{_bindir}
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
