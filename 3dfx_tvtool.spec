@@ -6,6 +6,7 @@ Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://131.155.224.79/~node/3dfx_tvtool/%{name}-%{version}.tar.bz2
+# Source0-md5:	41dbd44e9a398e3ae883dd6d621b9adf
 Source1:	%{name}.desktop
 URL:		http://131.155.224.79/~node/3dfx_tvtool/
 BuildRequires:	gtk+2-devel
