@@ -13,7 +13,6 @@ BuildRequires:	pango-devel
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
 
 %description
 The 3dfx TV Out Tool is a userfriendly GUI on setting all the settings
