@@ -2,7 +2,7 @@ Summary:	The 3dfx TV Out Tool - GUI on setting the BT869 chip on the VooDoo3
 Summary(pl):	3dfx TV Out Tool - narzêdzie do ustawiania chipu BT869 z kart VooDoo3
 Name:		3dfx_tvtool
 Version:	0.0.3
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://131.155.224.79/~node/3dfx_tvtool/%{name}-%{version}.tar.bz2
@@ -38,12 +38,12 @@ export CC
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_applnkdir}/Multimedia
+install -d $RPM_BUILD_ROOT%{_desktopdir}
 
 %{__make} DESTDIR=$RPM_BUILD_ROOT \
 		BINDIR=%{_bindir} install
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Multimedia
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -52,4 +52,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc docs/{BUGS,ChangeLog,README,TODO}
 %attr(755,root,root) %{_bindir}/*
-%attr(644,root,root) %{_applnkdir}/Multimedia/*.desktop
+%attr(644,root,root) %{_desktopdir}/*.desktop
