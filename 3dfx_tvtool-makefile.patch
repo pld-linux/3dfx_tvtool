@@ -1,25 +1,23 @@
---- ./Makefile.org	Sun May  5 21:19:20 2002
-+++ ./Makefile	Tue May  7 18:24:01 2002
-@@ -2,10 +2,19 @@
- #  Makefile for 3dfx tvtool by oliver (oliver@are-b.org)
- # -=====================================================-
+--- ./Makefile.org	Thu May  9 01:04:51 2002
++++ ./Makefile	Thu May  9 20:53:10 2002
+@@ -4,7 +4,7 @@
  
--CC = gcc
-+#CC = gcc
-+
-+BINDIR=/usr/X11R6/bin
+ #CC = gcc
+ 
+-DESTDIR=/usr/local/bin/
++BINDIR=/usr/X11R6/bin/
+ BIN=3dfx_tvtool
  
  all:
--	$(CC) 3dfx_tvtool.c -O2 `pkg-config --cflags gtk+-2.0` `pkg-config --libs gtk+-2.0` -o 3dfx_tvtool
-+	$(CC) $(CFLAGS) 3dfx_tvtool.c -O2 `pkg-config --cflags gtk+-2.0` `pkg-config --libs gtk+-2.0` -o 3dfx_tvtool
+@@ -14,8 +14,8 @@
+ 	rm -rf *~ src/*~ src/*.o bin/$(BIN)
  
- clean:	
- 	rm -rf *~ 3dfx_tvtool
-+
-+install:
+ install:
+-	install -d $(DESTDIR)
+-	install -c -m 0755 bin/$(BIN) $(DESTDIR)
 +	install -d $(DESTDIR)$(BINDIR)
-+	install -c -m 755 3dfx_tvtool $(DESTDIR)$(BINDIR)
-+
-+uninstall:
-+	rm -f $(DESTDIR)$(BINDIR)
-+	
++	install -c -m 0755 bin/$(BIN) $(DESTDIR)$(BINDIR)
+ 
+ uninstall:
+-	rm -f $(DESTDIR)/$(BIN)
++	rm -f $(DESTDIR)$(BINDIR)/$(BIN)
