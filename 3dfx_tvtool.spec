@@ -37,8 +37,6 @@ CC=%{__cc}
 export CC
 %{__make}
 
-gzip -nf9 BUGS ChangeLog README TODO
-
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_applnkdir}/Multimedia
@@ -52,6 +50,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc BUGS ChangeLog README TODO
 %attr(755,root,root) %{_bindir}/*
 %attr(644,root,root) %{_applnkdir}/Multimedia/*.desktop
