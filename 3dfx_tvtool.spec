@@ -1,15 +1,15 @@
 Summary:	The 3dfx TV Out Tool - GUI on setting the BT869 chip on the VooDoo3
 Summary(pl):	3dfx TV Out Tool - narzêdzie do ustawiania chipu BT869 z kart VooDoo3
 Name:		3dfx_tvtool
-Version:	0.0.2
-Release:	3
+Version:	0.0.3
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://131.155.224.79/~node/3dfx_tvtool/%{name}-%{version}.tar.bz2
 Source1:	%{name}.desktop
-Patch0:		%{name}-makefile.patch
 URL:		http://131.155.224.79/~node/3dfx_tvtool/
 BuildRequires:	gtk+2-devel
+BuildRequires:	pango-devel
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -30,7 +30,6 @@ modu³u bt869 z lm_sensors.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 CC=%{__cc}
@@ -41,7 +40,8 @@ export CC
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_applnkdir}/Multimedia
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} DESTDIR=$RPM_BUILD_ROOT \
+		BINDIR=%{_bindir} install
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Multimedia
 
@@ -50,6 +50,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc BUGS ChangeLog README TODO
+%doc docs/{BUGS,ChangeLog,README,TODO}
 %attr(755,root,root) %{_bindir}/*
 %attr(644,root,root) %{_applnkdir}/Multimedia/*.desktop
