@@ -1,0 +1,25 @@
+--- ./Makefile.org	Sun May  5 21:19:20 2002
++++ ./Makefile	Tue May  7 18:24:01 2002
+@@ -2,10 +2,19 @@
+ #  Makefile for 3dfx tvtool by oliver (oliver@are-b.org)
+ # -=====================================================-
+ 
+-CC = gcc
++#CC = gcc
++
++BINDIR=/usr/X11R6/bin
+ 
+ all:
+-	$(CC) 3dfx_tvtool.c -O2 `pkg-config --cflags gtk+-2.0` `pkg-config --libs gtk+-2.0` -o 3dfx_tvtool
++	$(CC) $(CFLAGS) 3dfx_tvtool.c -O2 `pkg-config --cflags gtk+-2.0` `pkg-config --libs gtk+-2.0` -o 3dfx_tvtool
+ 
+ clean:	
+ 	rm -rf *~ 3dfx_tvtool
++
++install:
++	install -d $(DESTDIR)$(BINDIR)
++	install -c -m 755 3dfx_tvtool $(DESTDIR)$(BINDIR)
++
++uninstall:
++	rm -f $(DESTDIR)$(BINDIR)
++	
