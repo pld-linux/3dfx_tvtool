@@ -5,10 +5,10 @@ Version:	0.0.3
 Release:	4
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://131.155.224.79/~node/3dfx_tvtool/%{name}-%{version}.tar.bz2
+Source0:	http://7of9.are-b.org/~node/3dfx_tvtool/%{name}-%{version}.tar.bz2
 # Source0-md5:	41dbd44e9a398e3ae883dd6d621b9adf
 Source1:	%{name}.desktop
-URL:		http://131.155.224.79/~node/3dfx_tvtool/
+URL:		http://7of9.are-b.org/~node/3dfx_tvtool/
 BuildRequires:	gtk+2-devel
 BuildRequires:	pango-devel
 BuildRequires:	pkgconfig
@@ -52,4 +52,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc docs/{BUGS,ChangeLog,README,TODO}
 %attr(755,root,root) %{_bindir}/*
-%attr(644,root,root) %{_desktopdir}/*.desktop
+%{_desktopdir}/*.desktop
